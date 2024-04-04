@@ -19,4 +19,6 @@
   </li>
 </ol>
 
-## 
+## ER Diagram 
+![ER_Diagram](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/6d84f8cb-e763-4d2c-bd99-b71bc2c4646c)
+
