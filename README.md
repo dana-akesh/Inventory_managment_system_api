@@ -1,5 +1,5 @@
 # ⭐ Inventory Managment System Rest API ⭐
-The Inventory Management System API provides endpoints for managing inventory-related operations within a business or organization. It allows the user to add, update, and delete the core reasources which are the products, categories, warehouses, and shipments.
+The Inventory Management System API provides endpoints for managing inventory-related operations within a business or organization.With the use of _OpenAi 3.1.0_ it allows the user to add, update, and delete the core reasources which are the products, categories, warehouses, and shipments.
 ## 🔖Table Of Contents:
 - [Core Resources](#core-resources)
 - [ER Diagram](#er-diagram)
