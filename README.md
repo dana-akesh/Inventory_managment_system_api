@@ -35,7 +35,8 @@
 ### /shipments
 ![image](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/ab56914f-7c04-4c44-9308-1484a5b727a9)
 
-
+## 🔗Swagger Hub Link:
+https://app.swaggerhub.com/apis/DANAAKESH_1/InventoryManagmentSystemRestAPI/1.0.0
 
 
 
