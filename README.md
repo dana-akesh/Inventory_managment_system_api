@@ -26,7 +26,7 @@ The Inventory Management System API provides endpoints for managing inventory-re
 </ol>
 
 ## 💠ER Diagram:
-![ER_Diagram](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/6d84f8cb-e763-4d2c-bd99-b71bc2c4646c)
+![ER_Diagram drawio](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/cfc080e9-bf7e-41d0-9d13-de69df9503b0)
 
 ## 🪄Design and Documentation Tables for the Core Resources:
 ### /products 
