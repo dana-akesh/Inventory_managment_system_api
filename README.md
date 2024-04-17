@@ -5,6 +5,7 @@ The Inventory Management System API provides endpoints for managing inventory-re
 - [ER Diagram](#er-diagram)
 - [Design and Documentation Tables for the Core Resources](#design-and-documentation-tables-for-the-core-resources)
 - [Swagger Hub Link](#swagger-hub-link)
+- Postman file (included within the repository files) 
 ## 💡Core Resources:
 <ol>
   <li>
@@ -33,6 +34,7 @@ The Inventory Management System API provides endpoints for managing inventory-re
   - Postman
   - Maven
   - Java Development Kit (JDK) 19 or higher
+  - MySQL Workbench
     
 ## Clone the Repository:
 ```bash
