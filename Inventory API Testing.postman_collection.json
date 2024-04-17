@@ -1,0 +1,875 @@
+{
+	"info": {
+		"_postman_id": "ab48af60-c229-46b2-ab16-7fcc3fd67185",
+		"name": "Inventory API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33569646"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "getCategoryById",
+					"item": [
+						{
+							"name": "200_getCategoryById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/skincare",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"skincare"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404_getCategoryById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/?id=14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "14"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405_getCategoryById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "rewriteCategory",
+					"item": [
+						{
+							"name": "200_rewriteCategory",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryid\" : \"oil\",\r\n    \"name\" : \"oils\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "addCategory",
+					"item": [
+						{
+							"name": "201_addCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryid\": \"makeup\",\r\n    \"name\": \"Makeup Category\",\r\n    \"description\": \"Category Description\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "updateCategory",
+					"item": [
+						{
+							"name": "200_updateCategory",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404_rewriteCategory",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405_rewriteCategory",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "deleteCategory",
+					"item": [
+						{
+							"name": "deleteCategory",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/makeups",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"makeups"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "getProductById",
+					"item": [
+						{
+							"name": "200_getProductByid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/product/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404_getProductByid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/product/?id=14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "14"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405_getProductByid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "rewriteProduct",
+					"item": [
+						{
+							"name": "200_rewriteProduct",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryid\" : \"oil\",\r\n    \"name\" : \"oils\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "updateProduct",
+					"item": [
+						{
+							"name": "200_updateProduct",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "addProduct",
+					"item": [
+						{
+							"name": "201_addProduct",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productid\" : 1231,\r\n    \"description\" : \"testing\",\r\n    \"name\" : \"jojo\",\r\n    \"price\": 150,\r\n    \"quantity\": 129\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "deleteProduct",
+					"item": [
+						{
+							"name": "deleteProduct",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/makeups",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"makeups"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Shipment",
+			"item": [
+				{
+					"name": "getShipmentByid",
+					"item": [
+						{
+							"name": "200_getShipmentByid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/shipment/?id=12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"shipment",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404_getShipmentByid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/shipment/?id=12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"shipment",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405_getShipmentByid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/shipment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"shipment"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "rewriteShipment",
+					"item": [
+						{
+							"name": "200_rewriteShipment",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryid\" : \"oil\",\r\n    \"name\" : \"oils\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "addShipment",
+					"item": [
+						{
+							"name": "201_addShipment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "updateShipment",
+					"item": [
+						{
+							"name": "200_updateShipment",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "deleteShipment",
+					"item": [
+						{
+							"name": "deleteShipment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/makeups",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"makeups"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Warehouse",
+			"item": [
+				{
+					"name": "getWarehouseByid",
+					"item": [
+						{
+							"name": "200_getWarehouseByid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/warehouse/?id=12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"warehouse",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404_getWarehouseByid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/warehouse/?id=12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"warehouse",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405_getWarehouseByid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/warehouse",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"warehouse"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "rewriteWarehouse",
+					"item": [
+						{
+							"name": "200_rewriteWarehouse",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryid\" : \"oil\",\r\n    \"name\" : \"oils\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "addWarehouse",
+					"item": [
+						{
+							"name": "201_addWarehouse",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"warehouseid\" : 12398,\r\n    \"location\" : \"london\",\r\n    \"capacity\" : 1231,\r\n    \"name\" : \"the london warehouse\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/warehouse",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"warehouse"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "updateWarehouse",
+					"item": [
+						{
+							"name": "200_updateWarehouse",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "deleteWarehouse",
+					"item": [
+						{
+							"name": "deleteWarehouse",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/category/makeups",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"makeups"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
