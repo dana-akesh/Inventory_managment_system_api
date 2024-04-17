@@ -45,16 +45,16 @@ cd  Inventory_managment_system_api
 
 ## 🪄Design and Documentation Tables for the Core Resources:
 ### /product
-![image](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/432f5f8d-c77d-4ba4-891a-defae50e3b5d)
+![image](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/203cbd92-5581-4071-9326-e4dc44d511e7)
 
 ### /category
-![image](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/68f3c6f2-9b34-4ce2-bd1b-4aa5bae1fe86)
+![image](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/14d8453f-cf0a-494e-98bb-219ae6bce006)
 
 ### /warehouse
-![image](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/33f6b9e8-9037-421e-a288-d7194130dc41)
+![image](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/b827556c-6508-4232-a86a-886cdba733ba)
 
 ### /shipment
-![image](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/6b6a969f-8f8f-455a-9950-d2a6319da04f)
+![image](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/6f3823f2-d01e-4223-bc27-5eaf2280db56)
 
 ## 🔗Swagger Hub Link:
 https://app.swaggerhub.com/apis/DANAAKESH_1/InventoryManagmentSystemRestAPI/1.0.0
