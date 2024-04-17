@@ -1,5 +1,5 @@
 # ⭐ Inventory Managment System Rest API ⭐
-The Inventory Management System API provides endpoints for managing inventory-related operations within a business or organization.With the use of _OpenAi 3.1.0_ it allows the user to add, update, and delete the core reasources which are the product, category, warehouse, and shipment.
+The Inventory Management System API provides endpoints for managing inventory-related operations within a business or organization.With the use of _OpenAi 3.1.0_ it allows the user to add, update, and delete the core reasources which are the product, category, warehouse, and shipment. The project is tested via postman.
 ## 🔖Table Of Contents:
 - [Core Resources](#core-resources)
 - [ER Diagram](#er-diagram)
@@ -27,6 +27,19 @@ The Inventory Management System API provides endpoints for managing inventory-re
 
 ## 💠ER Diagram:
 ![ER_Diagram drawio](https://github.com/dana-akesh/Inventory_managment_system_api/assets/86303193/cfc080e9-bf7e-41d0-9d13-de69df9503b0)
+
+## Prerequisites:
+  - IntelliJ IDEA
+  - Postman
+  - Maven
+  - Java Development Kit (JDK) 19 or higher
+    
+## Clone the Repository:
+```bash
+git clone https://github.com/dana-akesh/Inventory_managment_system_api
+cd  Inventory_managment_system_api
+```
+ℹ️ note: the application should be running on Port 8080 -> http://localhost:8080. 
 
 ## 🪄Design and Documentation Tables for the Core Resources:
 ### /product
