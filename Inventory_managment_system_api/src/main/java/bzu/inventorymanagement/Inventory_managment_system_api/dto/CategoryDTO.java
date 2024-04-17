@@ -11,7 +11,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoryDTO {
-    private String categoryID;
+    private String categoryid;
     private String name;
     private String description;
     private Set<Product> products;

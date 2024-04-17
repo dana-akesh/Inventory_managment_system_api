@@ -13,9 +13,9 @@ import java.util.Set;
 @NoArgsConstructor
 public class ShipmentDTO {
 
-    private Long shipmentID;
+    private Long shipmentid;
     private String status;
-    private String trackingNumber;
+    private String tracking_number;
     private Set<Product> products;
     private Set<Warehouse> warehouses;
 }

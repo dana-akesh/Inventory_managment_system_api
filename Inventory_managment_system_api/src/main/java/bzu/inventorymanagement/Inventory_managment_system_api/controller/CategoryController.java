@@ -1,6 +1,7 @@
 package bzu.inventorymanagement.Inventory_managment_system_api.controller;
 
 import bzu.inventorymanagement.Inventory_managment_system_api.dto.CategoryDTO;
+import bzu.inventorymanagement.Inventory_managment_system_api.exception.BadRequestException;
 import bzu.inventorymanagement.Inventory_managment_system_api.service.CategoryService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -33,9 +34,13 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<CategoryDTO> addCategory(@RequestBody CategoryDTO categoryDTO){
+    public ResponseEntity<CategoryDTO> addCategory(@Valid @RequestBody CategoryDTO categoryDTO){
+        if (categoryDTO.getCategoryid() == null){
+            log.error("Cannot have an ID {}", categoryDTO);
+            throw new BadRequestException(CategoryController.class.getSimpleName(),"Id");
+        }
         CategoryDTO addedCat = categoryService.createCategory(categoryDTO);
-        return new ResponseEntity<>(addedCat, HttpStatus.OK);
+        return new ResponseEntity<>(addedCat, HttpStatus.CREATED);
     }
 
     @PatchMapping("/{categoryid}")

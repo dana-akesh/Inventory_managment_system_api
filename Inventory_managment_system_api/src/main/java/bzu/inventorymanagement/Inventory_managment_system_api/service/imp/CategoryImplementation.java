@@ -17,8 +17,8 @@ public class CategoryImplementation implements CategoryService {
 
     @Override
     public CategoryDTO rewriteCategory(CategoryDTO categoryDTO) { //put
-        Category category = categoryRepository.findById(categoryDTO.getCategoryID()).orElseThrow(() -> new ResourceNotFoundException("Category","id", categoryDTO.getCategoryID()));
-        category.setCategoryID(categoryDTO.getCategoryID());
+        Category category = categoryRepository.findById(categoryDTO.getCategoryid()).orElseThrow(() -> new ResourceNotFoundException("Category","id", categoryDTO.getCategoryid()));
+        category.setCategoryid(categoryDTO.getCategoryid());
         category.setName(categoryDTO.getName());
         category.setDescription(categoryDTO.getDescription());
         category.setProducts(categoryDTO.getProducts());
@@ -47,7 +47,7 @@ public class CategoryImplementation implements CategoryService {
     @Override
     public CategoryDTO updateCategoryByID(CategoryDTO categoryDTO, String id) {
         Category category = categoryRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Category","id", id));
-        category.setCategoryID(categoryDTO.getCategoryID());
+        category.setCategoryid(categoryDTO.getCategoryid());
         category.setName(categoryDTO.getName());
         category.setDescription(categoryDTO.getDescription());
         category.setProducts(categoryDTO.getProducts());
@@ -64,13 +64,18 @@ public class CategoryImplementation implements CategoryService {
 
     private CategoryDTO mapToDTO(Category category){
         CategoryDTO categoryDTO = new CategoryDTO();
+
+        categoryDTO.setCategoryid(category.getCategoryid());
         categoryDTO.setName(category.getName());
         categoryDTO.setDescription(category.getDescription());
+
         return categoryDTO;
     }
 
     private Category mapToEntity(CategoryDTO categoryDTO){
         Category category = new Category();
+
+        category.setCategoryid(categoryDTO.getCategoryid());
         category.setName(categoryDTO.getName());
         category.setDescription(categoryDTO.getDescription());
         return category;

@@ -27,20 +27,20 @@ public class WarehouseController {
 
     @PutMapping
     public ResponseEntity<WarehouseDTO> rewriteWarehouse(@RequestBody WarehouseDTO warehouseDTO){
-        WarehouseDTO rewritedCat = warehouseService.rewriteWarehouse(warehouseDTO);
-        return new ResponseEntity<>(rewritedCat, HttpStatus.OK);
+        WarehouseDTO rewritedWarehouse = warehouseService.rewriteWarehouse(warehouseDTO);
+        return new ResponseEntity<>(rewritedWarehouse, HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<WarehouseDTO> addWarehouse(@RequestBody WarehouseDTO warehouseDTO){
-        WarehouseDTO addedCat = warehouseService.createWarehouse(warehouseDTO);
-        return new ResponseEntity<>(addedCat, HttpStatus.OK);
+        WarehouseDTO addedWarehouse = warehouseService.createWarehouse(warehouseDTO);
+        return new ResponseEntity<>(addedWarehouse, HttpStatus.CREATED);
     }
 
     @PatchMapping("/{warehouseid}")
     public ResponseEntity<WarehouseDTO> updateWarehouse(@RequestBody WarehouseDTO warehouseDTO, @PathVariable(name = "warehouseid") long id){
-        WarehouseDTO updatedCat = warehouseService.updateWarehouse(warehouseDTO, id);
-        return new ResponseEntity<>(updatedCat, HttpStatus.OK);
+        WarehouseDTO updatedWarehouse = warehouseService.updateWarehouse(warehouseDTO, id);
+        return new ResponseEntity<>(updatedWarehouse, HttpStatus.OK);
     }
 
     @DeleteMapping("/{warehouseid}")

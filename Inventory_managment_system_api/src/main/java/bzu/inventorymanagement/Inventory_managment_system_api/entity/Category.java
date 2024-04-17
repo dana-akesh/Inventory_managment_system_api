@@ -18,7 +18,7 @@ import java.util.Set;
 public class Category implements Serializable {
 
     @Id
-    private String categoryID;
+    private String categoryid;
     private String name;
     private String description;
 

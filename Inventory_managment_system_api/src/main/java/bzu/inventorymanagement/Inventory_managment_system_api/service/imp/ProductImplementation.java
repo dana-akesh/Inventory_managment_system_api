@@ -17,13 +17,14 @@ public class ProductImplementation implements ProductService {
 
     @Override
     public ProductDTO rewriteProduct(ProductDTO productDTO) {
-        Product product = productRepository.findById(productDTO.getProductID()).orElseThrow(() -> new ResourceNotFoundException("Product","id", productDTO.getProductID()));
+        Product product = productRepository.findById(productDTO.getProductid()).orElseThrow(() -> new ResourceNotFoundException("Product","id", productDTO.getProductid()));
 
         product.setCategory(productDTO.getCategory());
-        product.setProductID(productDTO.getProductID());
+        product.setProductid(productDTO.getProductid());
         product.setDescription(productDTO.getDescription());
         product.setPrice(productDTO.getPrice());
         product.setQuantity(productDTO.getQuantity());
+
         productRepository.save(product);
 
         return productDTO;
@@ -45,7 +46,7 @@ public class ProductImplementation implements ProductService {
         Product product = productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product","id", id));
 
         product.setCategory(productDTO.getCategory());
-        product.setProductID(product.getProductID());
+        product.setProductid(product.getProductid());
         product.setDescription(productDTO.getDescription());
         product.setPrice(productDTO.getPrice());
         product.setQuantity(productDTO.getQuantity());
@@ -70,6 +71,8 @@ public class ProductImplementation implements ProductService {
 
     private ProductDTO mapToDTO(Product product){
         ProductDTO productDTO = new ProductDTO();
+
+        productDTO.setProductid(product.getProductid());
         productDTO.setName(product.getName());
         productDTO.setCategory(product.getCategory());
         productDTO.setDescription(product.getDescription());
@@ -82,6 +85,7 @@ public class ProductImplementation implements ProductService {
     private Product mapToEntity(ProductDTO productDTO){
         Product product = new Product();
 
+        product.setProductid(productDTO.getProductid());
         product.setName(productDTO.getName());
         product.setCategory(productDTO.getCategory());
         product.setDescription(productDTO.getDescription());

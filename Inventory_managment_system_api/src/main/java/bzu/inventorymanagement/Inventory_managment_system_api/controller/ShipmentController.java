@@ -28,20 +28,20 @@ public class ShipmentController {
 
     @PutMapping
     public ResponseEntity<ShipmentDTO> rewriteShipment(@RequestBody ShipmentDTO shipmentDTO){
-        ShipmentDTO rewritedCat = shipmentService.rewriteShipment(shipmentDTO);
-        return new ResponseEntity<>(rewritedCat, HttpStatus.OK);
+        ShipmentDTO rewritedShipment = shipmentService.rewriteShipment(shipmentDTO);
+        return new ResponseEntity<>(rewritedShipment, HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<ShipmentDTO> addShipment(@RequestBody ShipmentDTO shipmentDTO){
-        ShipmentDTO addedCat = shipmentService.createShipment(shipmentDTO);
-        return new ResponseEntity<>(addedCat, HttpStatus.OK);
+        ShipmentDTO addedShipment = shipmentService.createShipment(shipmentDTO);
+        return new ResponseEntity<>(addedShipment, HttpStatus.CREATED);
     }
 
     @PatchMapping("/{shipmentid}")
     public ResponseEntity<ShipmentDTO> updateShipment(@RequestBody ShipmentDTO shipmentDTO, @PathVariable(name = "shipmentid") long id){
-        ShipmentDTO updatedCat = shipmentService.updateShipment(shipmentDTO, id);
-        return new ResponseEntity<>(updatedCat, HttpStatus.OK);
+        ShipmentDTO updatedShipment = shipmentService.updateShipment(shipmentDTO, id);
+        return new ResponseEntity<>(updatedShipment, HttpStatus.OK);
     }
 
     @DeleteMapping("/{shipmentid}")

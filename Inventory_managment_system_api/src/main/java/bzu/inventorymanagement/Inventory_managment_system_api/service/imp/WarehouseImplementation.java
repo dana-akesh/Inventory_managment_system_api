@@ -17,9 +17,9 @@ public class WarehouseImplementation implements WarehouseService {
 
     @Override
     public WarehouseDTO rewriteWarehouse(WarehouseDTO warehouseDTO) {
-        Warehouse warehouse = warehouseRepository.findById(warehouseDTO.getWarehouseID()).orElseThrow(() -> new ResourceNotFoundException("Warehouse","id", warehouseDTO.getWarehouseID()));
+        Warehouse warehouse = warehouseRepository.findById(warehouseDTO.getWarehouseid()).orElseThrow(() -> new ResourceNotFoundException("Warehouse","id", warehouseDTO.getWarehouseid()));
 
-        warehouse.setWarehouseID(warehouseDTO.getWarehouseID());
+        warehouse.setWarehouseid(warehouseDTO.getWarehouseid());
         warehouse.setCapacity(warehouseDTO.getCapacity());
         warehouse.setLocation(warehouseDTO.getLocation());
         warehouse.setName(warehouseDTO.getName());
@@ -51,7 +51,7 @@ public class WarehouseImplementation implements WarehouseService {
         warehouse.setLocation(warehouseDTO.getLocation());
         warehouse.setName(warehouseDTO.getName());
         warehouse.setShipment(warehouseDTO.getShipments());
-        warehouse.setWarehouseID(id);
+        warehouse.setWarehouseid(id);
 
         warehouseRepository.save(warehouse);
         Warehouse savedWarehouse = warehouseRepository.save(warehouse);
@@ -74,7 +74,7 @@ public class WarehouseImplementation implements WarehouseService {
     private WarehouseDTO mapToDTO(Warehouse warehouse){
         WarehouseDTO warehouseDTO = new WarehouseDTO();
 
-        warehouseDTO.setWarehouseID(warehouse.getWarehouseID());
+        warehouseDTO.setWarehouseid(warehouse.getWarehouseid());
         warehouseDTO.setLocation(warehouse.getLocation());
         warehouseDTO.setName(warehouse.getName());
         warehouseDTO.setCapacity(warehouse.getCapacity());
@@ -87,7 +87,7 @@ public class WarehouseImplementation implements WarehouseService {
     private Warehouse mapToEntity(WarehouseDTO warehouseDTO){
         Warehouse warehouse = new Warehouse();
 
-        warehouse.setWarehouseID(warehouseDTO.getWarehouseID());
+        warehouse.setWarehouseid(warehouseDTO.getWarehouseid());
         warehouse.setLocation(warehouseDTO.getLocation());
         warehouse.setName(warehouseDTO.getName());
         warehouse.setCapacity(warehouseDTO.getCapacity());

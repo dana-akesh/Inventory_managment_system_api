@@ -14,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class WarehouseDTO {
 
-    private Long warehouseID;
+    private Long warehouseid;
     private String name;
     private String location;
     private int capacity;

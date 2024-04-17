@@ -1,7 +1,9 @@
 package bzu.inventorymanagement.Inventory_managment_system_api.controller;
 
 import bzu.inventorymanagement.Inventory_managment_system_api.dto.ProductDTO;
+import bzu.inventorymanagement.Inventory_managment_system_api.exception.BadRequestException;
 import bzu.inventorymanagement.Inventory_managment_system_api.service.ProductService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -27,20 +29,24 @@ public class ProductController {
 
     @PutMapping
     public ResponseEntity<ProductDTO> rewriteProduct(@RequestBody ProductDTO productDTO){
-        ProductDTO rewritedCat = productService.rewriteProduct(productDTO);
-        return new ResponseEntity<>(rewritedCat, HttpStatus.OK);
+        ProductDTO rewritedProduct = productService.rewriteProduct(productDTO);
+        return new ResponseEntity<>(rewritedProduct, HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<ProductDTO> addProduct(@RequestBody ProductDTO productDTO){
-        ProductDTO addedCat = productService.createProduct(productDTO);
-        return new ResponseEntity<>(addedCat, HttpStatus.OK);
+    public ResponseEntity<ProductDTO> addProduct(@Valid @RequestBody ProductDTO productDTO){
+        if (productDTO.getProductid() == null){
+            log.error("Cannot have an ID {}", productDTO);
+            throw new BadRequestException(ProductController.class.getSimpleName(),"Id");
+        }
+        ProductDTO addedProduct = productService.createProduct(productDTO);
+        return new ResponseEntity<>(addedProduct, HttpStatus.CREATED);
     }
 
     @PatchMapping("/{productid}")
     public ResponseEntity<ProductDTO> updateProduct(@RequestBody ProductDTO productDTO, @PathVariable(name = "productid") long id){
-        ProductDTO updatedCat = productService.updateProduct(productDTO, id);
-        return new ResponseEntity<>(updatedCat, HttpStatus.OK);
+        ProductDTO updatedProduct = productService.updateProduct(productDTO, id);
+        return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
     }
 
     @DeleteMapping("/{productid}")

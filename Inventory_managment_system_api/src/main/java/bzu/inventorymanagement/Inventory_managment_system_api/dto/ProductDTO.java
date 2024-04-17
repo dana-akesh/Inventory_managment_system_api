@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class ProductDTO {
 
-    private long productID;
+    private Long productid;
     private String name;
     private String description;
     private double price;

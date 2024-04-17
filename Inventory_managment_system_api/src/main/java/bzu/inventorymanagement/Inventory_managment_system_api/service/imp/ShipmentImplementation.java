@@ -17,12 +17,12 @@ public class ShipmentImplementation implements ShipmentService {
 
     @Override
     public ShipmentDTO rewriteShipment(ShipmentDTO shipmentDTO) {
-        Shipment shipment = shipmentRepository.findById(shipmentDTO.getShipmentID()).orElseThrow(() -> new ResourceNotFoundException("Shipment","id", shipmentDTO.getShipmentID()));
+        Shipment shipment = shipmentRepository.findById(shipmentDTO.getShipmentid()).orElseThrow(() -> new ResourceNotFoundException("Shipment","id", shipmentDTO.getShipmentid()));
 
-        shipment.setShipmentID(shipmentDTO.getShipmentID());
+        shipment.setShipmentid(shipmentDTO.getShipmentid());
         shipment.setStatus(shipmentDTO.getStatus());
         shipment.setWarehouse(shipmentDTO.getWarehouses());
-        shipment.setTrackingNumber(shipmentDTO.getTrackingNumber());
+        shipment.setTracking_number(shipmentDTO.getTracking_number());
         shipment.setProduct(shipmentDTO.getProducts());
 
         shipmentRepository.save(shipment);
@@ -45,10 +45,10 @@ public class ShipmentImplementation implements ShipmentService {
     public ShipmentDTO updateShipment(ShipmentDTO shipmentDTO, Long id) {
         Shipment shipment = shipmentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Shipment","id", id));
 
-        shipment.setShipmentID(id);
+        shipment.setShipmentid(id);
         shipment.setStatus(shipmentDTO.getStatus());
         shipment.setWarehouse(shipmentDTO.getWarehouses());
-        shipment.setTrackingNumber(shipmentDTO.getTrackingNumber());
+        shipment.setTracking_number(shipmentDTO.getTracking_number());
 
         shipmentRepository.save(shipment);
 
@@ -71,11 +71,11 @@ public class ShipmentImplementation implements ShipmentService {
     private ShipmentDTO mapToDTO(Shipment shipment){
         ShipmentDTO shipmentDTO = new ShipmentDTO();
 
-        shipmentDTO.setShipmentID(shipment.getShipmentID());
+        shipmentDTO.setShipmentid(shipment.getShipmentid());
         shipmentDTO.setStatus(shipment.getStatus());
         shipmentDTO.setProducts(shipment.getProduct());
         shipmentDTO.setWarehouses(shipment.getWarehouse());
-        shipmentDTO.setTrackingNumber(shipment.getTrackingNumber());
+        shipmentDTO.setTracking_number(shipment.getTracking_number());
 
         return shipmentDTO;
     }
@@ -83,11 +83,11 @@ public class ShipmentImplementation implements ShipmentService {
     private Shipment mapToEntity(ShipmentDTO shipmentDTO){
         Shipment shipment = new Shipment();
 
-        shipment.setShipmentID(shipmentDTO.getShipmentID());
+        shipment.setShipmentid(shipmentDTO.getShipmentid());
         shipment.setStatus(shipmentDTO.getStatus());
         shipment.setProduct(shipmentDTO.getProducts());
         shipment.setWarehouse(shipmentDTO.getWarehouses());
-        shipment.setTrackingNumber(shipmentDTO.getTrackingNumber());
+        shipment.setTracking_number(shipmentDTO.getTracking_number());
 
         return shipment;
     }

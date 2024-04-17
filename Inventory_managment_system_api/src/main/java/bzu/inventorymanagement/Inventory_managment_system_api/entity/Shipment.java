@@ -19,9 +19,9 @@ import java.util.Set;
 public class Shipment {
 
     @Id
-    private long shipmentID;
+    private long shipmentid;
     private String status;
-    private String trackingNumber;
+    private String tracking_number;
 
     @ManyToMany(mappedBy = "shipment")
     private Set<Product> product;
