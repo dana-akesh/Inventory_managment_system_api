@@ -482,6 +482,10 @@ paths:
           description: Successful operation
         "400":
           description: Bad Request
+        "404":
+          description: Product not found
+        "405":
+          description: Validation exception
     delete:
       tags:
       - product
@@ -776,8 +780,10 @@ paths:
           description: Successful operation
         "400":
           description: Bad Request
-        "422":
-          description: Unprocessable Entity
+        "404":
+          description: Product not found
+        "405":
+          description: Validation exception
     delete:
       tags:
       - category
@@ -1132,8 +1138,10 @@ paths:
           description: Successful operation
         "400":
           description: Bad Request
-        "422":
-          description: Unprocessable Entity
+        "404":
+          description: Product not found
+        "405":
+          description: Validation exception
     delete:
       tags:
       - warehouse
@@ -1536,8 +1544,10 @@ paths:
           description: Successful operation
         "400":
           description: Bad Request
-        "422":
-          description: Unprocessable Entity
+        "404":
+          description: Product not found
+        "405":
+          description: Validation exception
     delete:
       tags:
       - shipment
